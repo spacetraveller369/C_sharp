@@ -7,7 +7,6 @@ internal class Program
 {
     static void Main(string[] args)
     {
-     
         try
         {
             Student student1 = new Student(
@@ -30,53 +29,38 @@ internal class Program
                    new List<int>(), new List<int>(), new List<int> { 50, 70, 80 }
                );
 
-            Student student3 = new Student(
-                "Олена",
-                "Вандекамп",
-                "-",
-                new DateTime(1950, 2, 28),
-                "Киев",
-                "1201204556",
-                new List<int>(), new List<int>(), new List<int> { 85, 88, 12 }
-            );
-
-            Console.WriteLine("Student 1 details:");
-            student1.ShowStudent();
-            Console.WriteLine();
-
-            Console.WriteLine("Student 2 details:");
-            student2.ShowStudent();
-            Console.WriteLine();
-
-            Console.WriteLine("Student 3 details:");
-            student3.ShowStudent();
-            Console.WriteLine();
-
             var group = new Group();
-            group.GroupName = "PV21"; 
+            group.GroupName = "PV21";
             group.GroupSpecialist = "Geography";
             group.CourseNumber = 2025;
 
             group.AddStudent(student1);
             group.AddStudent(student2);
-            group.AddStudent(student3);
 
-            Console.WriteLine("Group details before removing low-performing students:");
+            Console.WriteLine("Исходная группы");
             group.ShowGroup();
             Console.WriteLine();
 
-            group.RemoveStudentsWithLowGrades();
+            // Тестирование клонирования
+            Console.WriteLine("Выполняется тестирование клонирования");
+            Group clonedGroup = (Group)group.Clone();
 
-            Console.WriteLine("Group details after removing low-performing students:");
+            Console.WriteLine("\n Меняем оригинальные данные");
+           
+            group.GroupName = "New changed name";
+            
+            group.GetStudents()[0].Surname = "Изменена_в_оригинале";
+
+            Console.WriteLine("\n Оригинальная группа псле изменений");
             group.ShowGroup();
             Console.WriteLine();
 
-            group.EditStudentData(student1, "Сьюзан", "New Address", "9876543210");
-
-            Console.WriteLine("Updated Student 1 details:");
-            student1.ShowStudent();
+            Console.WriteLine(" Клонированная группа");
+            clonedGroup.ShowGroup();
             Console.WriteLine();
+            // 
 
+            // Демонстрация старого перехвата исключений
             Console.WriteLine("- Тест генерации исключения -");
             student1.Name = "";
 

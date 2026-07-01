@@ -4,7 +4,8 @@ using System.Linq;
 
 namespace Classes_st;
 
-class Group
+// Наследование интерфейса ICloneable
+class Group : ICloneable
 {
     private List<Student> _students;
 
@@ -57,17 +58,31 @@ class Group
         SetCourseNumber(courseNumber);
     }
 
-    // старые setters
+    // ICloneable
+    public object Clone()
+    {
+        Group clonedGroup = new Group(this.GroupName, this.GroupSpecialist, this.CourseNumber);
+
+        foreach (var student in this._students)
+        {
+            clonedGroup.AddStudent((Student)student.Clone());
+        }
+
+        return clonedGroup;
+    }
+    //
+
     public void SetGroupName(string groupName) => GroupName = groupName;
     public void SetGroupSpecialist(string groupSpecialist) => GroupSpecialist = groupSpecialist;
     public void SetCourseNumber(int courseNumber) => CourseNumber = courseNumber;
 
-    // старые getters
     public string GetGroupName() => GroupName;
     public string GetGroupSpecialist() => GroupSpecialist;
     public int GetCourseNumber() => CourseNumber;
 
-    // methods
+    // Вспомогательный геттер для демонстрационных тестов клонирования
+    public List<Student> GetStudents() => _students;
+
     public void ShowGroup()
     {
         Console.WriteLine($"Group: {_groupName}, Specialisation: {_groupSpecialist}, Course: {_courseNumber}");

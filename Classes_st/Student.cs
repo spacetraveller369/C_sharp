@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 namespace Classes_st;
 
-class Student
+// Наследование интерфейса ICloneable
+class Student : ICloneable
 {
     private string _name;
     private string _surname;
@@ -131,6 +132,7 @@ class Student
         }
     }
 
+    // c-tor
     public Student()
         : this("Name", "Surname", "Patronymic", DateTime.Now, "undefined", "undefined")
     {
@@ -154,6 +156,23 @@ class Student
         SetGradeCourseWork(gradesCourseWork);
         SetGradesExam(gradesExam);
     }
+
+    // ICloneable
+    public object Clone()
+    {
+        return new Student(
+            this.Name,
+            this.Surname,
+            this.Patronymic,
+            this.Birthday,
+            this.Address,
+            this.TelNumber,
+            new List<int>(this.GradesCredit),      
+            new List<int>(this.GradesCourseWork), 
+            new List<int>(this.GradesExam)
+        );
+    }
+    //
 
     public void SetName(string name) => Name = name;
     public void SetSurname(string surname) => Surname = surname;
@@ -179,7 +198,7 @@ class Student
           $"Surname: {_surname}\n" +
           $"Name: {_name}\n" +
           $"Patronymic: {_patronymic}\n" +
-          $"Birthday: {_birthday}\n" +
+          $"Birthday: {_birthday.ToShortDateString()}\n" +
           $"Address: {_address}\n" +
           $"Phone number: {_telNumber}\n" +
           $"Grades credit: {string.Join(", ", _gradesCredit)}\n" +
