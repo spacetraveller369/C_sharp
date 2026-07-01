@@ -1,0 +1,15 @@
+C:\Users\User\Desktop\C_sharp\Classes_st\bin\Debug\net8.0\Classes_st.exe
+C:\Users\User\Desktop\C_sharp\Classes_st\bin\Debug\net8.0\Classes_st.deps.json
+C:\Users\User\Desktop\C_sharp\Classes_st\bin\Debug\net8.0\Classes_st.runtimeconfig.json
+C:\Users\User\Desktop\C_sharp\Classes_st\bin\Debug\net8.0\Classes_st.dll
+C:\Users\User\Desktop\C_sharp\Classes_st\bin\Debug\net8.0\Classes_st.pdb
+C:\Users\User\Desktop\C_sharp\Classes_st\obj\Debug\net8.0\Classes_st.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\C_sharp\Classes_st\obj\Debug\net8.0\Classes_st.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\C_sharp\Classes_st\obj\Debug\net8.0\Classes_st.AssemblyInfo.cs
+C:\Users\User\Desktop\C_sharp\Classes_st\obj\Debug\net8.0\Classes_st.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\C_sharp\Classes_st\obj\Debug\net8.0\Classes_st.sourcelink.json
+C:\Users\User\Desktop\C_sharp\Classes_st\obj\Debug\net8.0\Classes_st.dll
+C:\Users\User\Desktop\C_sharp\Classes_st\obj\Debug\net8.0\refint\Classes_st.dll
+C:\Users\User\Desktop\C_sharp\Classes_st\obj\Debug\net8.0\Classes_st.pdb
+C:\Users\User\Desktop\C_sharp\Classes_st\obj\Debug\net8.0\Classes_st.genruntimeconfig.cache
+C:\Users\User\Desktop\C_sharp\Classes_st\obj\Debug\net8.0\ref\Classes_st.dll
